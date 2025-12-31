@@ -46,3 +46,15 @@ Since this is a logic-only library running in a hardware-agnostic context, the f
 
 ---
 *Maintained by asteriod-deva*
+
+## Hardware Validation
+
+The core modules in this repository were validated on real hardware using an ATmega328P (Arduino Uno–class microcontroller).
+
+The same C source files were reused without modification, with only a minimal hardware-specific application layer added for GPIO and timing.
+
+During integration with the Arduino toolchain, a C/C++ linkage issue was encountered and resolved using extern "C" guards in the headers, ensuring correct symbol linkage between C modules and the C++-based Arduino build system.
+
+This validation confirmed the portability, determinism and non-blocking behavior of the firmware logic when deployed on an actual microcontroller.
+
+*Maintained by asteriod-deva*
